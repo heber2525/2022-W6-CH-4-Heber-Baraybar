@@ -23,11 +23,8 @@ export async function mongoConnect() {
     return result;
 } */
 
-export async function robotsConnect(collection = 'robots') {
-    // const { mongoClient, dbCoders } = await mongoConnect();
-    //const booksCollection = dbCoders.collection(collection);
-    // return { mongoClient, booksCollection };
-    await mongoConnect();
+export function robotsConnect(collection = 'robots') {
+    mongoConnect().then();
     const robotSchema = new mongoose.Schema({
         name: String,
         image: String,
